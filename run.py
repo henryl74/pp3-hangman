@@ -29,11 +29,10 @@ def type_name():
             break
 
     # Game wont run without a name
-    def validate_data(name):
+def validate_data(name):
     """
     Validates user data for name
     """
-
     try:
         if name == "":
             raise ValueError("\033[0;31mPlease input a name \n")
@@ -45,6 +44,31 @@ def type_name():
         return False
 
     return True
+
+def menu_rules():
+    """
+    Main menu options for the game and rules explaining how to play 
+    """
+    print("\033[0mHangman Main Menu: \n")
+    print("1. Hangman Instructions")
+    print("2. Select the language for the words")
+    print("3. Start Hangman")
+    print("4. Exit Game \n")
+
+    while True:
+        menu_selection = input("\033[0;36mPlease select an option from the above menu:")
+
+        if menu_selection == "1":
+            hangman_instructions()
+        elif menu_selection == "2":
+            select_language()
+        elif menu_selection == "3":
+            select_word()   
+        elif menu_selection == "4":
+            exit_game()
+        else:
+            print("\033[0;31mIncorrect input, please select a valid option from the menu")
+
 
 
 
