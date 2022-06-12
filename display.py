@@ -1,3 +1,5 @@
+# All steps to build the hangman
+
 display_hangman = ['''
   +---+
   |   |

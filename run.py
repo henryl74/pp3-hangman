@@ -56,9 +56,8 @@ def main_menu():
     """
     print("\033[0mHangman Main Menu: \n")
     print("1. Hangman Instructions")
-    print("2. Select the language for the words")
-    print("3. Start Hangman")
-    print("4. Exit Game \n")
+    print("2. Select the language to start the game")
+    print("3. Exit Game \n")
 
     while True:
         menu_selection = input("\033[0;36mPlease select an option from the above menu: \n")
@@ -66,13 +65,11 @@ def main_menu():
         if menu_selection == "1":
             hangman_instructions()
         elif menu_selection == "2":
-            select_language()
+            select_language()   
         elif menu_selection == "3":
-            select_word()   
-        elif menu_selection == "4":
             exit_game()
         else:
-            print("\033[0;31mIncorrect input, please select a valid option from the menu")
+            print("\033[0;31mIncorrect input, please select a valid option from the menu.")
 
 # Instructions explaining how to play the game
 
@@ -122,7 +119,8 @@ def select_language():
             print("\033[0;31mPlease try again!")
 
     def start_hangman(word):
-        """ 
+        """
+        Ramdon words from local import words.py will be used for the game 
         """
         attemps = 6
         letters = set(word)
