@@ -93,7 +93,7 @@ def hangman_instructions():
     )
 
     # Prompts the player to start the game
-    print("\033[0;36mAre you ready to have fun?.. if so then press option 3 from the main menu! \n")
+    print("\033[0;36mAre you ready to have fun?.. if so then type 2 on your screen! \n")
 
 # Function to select the language for the game
 def select_language():
@@ -137,7 +137,7 @@ def exit_game():
     """
     print("\033[0;36mThank you for playing Hangman, I hope you'll come back for more fun soon!")
     print("\033[0;36mIf you want to start over click the Run Program button at the top of the screen.")
-    sys.exit_game()
+    sys.exit()
 
 
 def hangman_game():
