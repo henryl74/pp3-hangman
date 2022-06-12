@@ -24,7 +24,7 @@ def type_name():
 
     # Print players name with welcome message
     while True:
-        player_name = input("\033[0;36mEnter your name here: ").strip()
+        player_name = input("\033[0;36mEnter your name here: \n").strip()
 
         if validate_name(player_name):
             print(f"Hello {player_name} welcome to my game\n")
@@ -104,3 +104,12 @@ def exit_game():
     print("\033[0;36mThank you for playing Hangman, I hope you'll come back soon for more fun!")
     print("\033[0;36mIf you want to start over click the Run Program button at the top of the screen.")
     sys.exit_game()
+
+def hangman_game():
+    """
+    Last function used to call all functions in the game
+    """
+    type_name()
+    main_menu()
+
+hangman_game()
