@@ -82,8 +82,10 @@ def hangman_instructions():
     """
 
     print(
-        "033[0;32mHow to Play Hangman: \n\n"
-        "The main objective of this game is to make the correct word "
+        "\n\n"
+        "\033[0;32mHow to Play Hangman: \n\n"
+        "The main objective of this game "
+        "is to make the correct word "
         "by guessing the correct letter one at a time. \n\n1. There are three languages "
         "you can choose to play this game: English, French and Spanish. \n2. To guess the word, "
         "type a letter of your choice on the selected language, then click the enter key. \n3. If your "
@@ -93,8 +95,41 @@ def hangman_instructions():
         "at the top of the screen to reset the whole game back to the beginning. \n\n"
     )
 
-    # Promp to player to start the game
+    # Prompts the player to start the game
     print("\033[0;36mAre you ready to have fun?.. if so then press option 3 from the main menu! \n")
+
+# Function to select the language for the game
+def select_language():
+    """
+    Gives the player the option to choice a language to play the game
+    and generates a ramdon word from local import file words.py
+    """
+
+    while True:
+        languages = input("\033[0;36mPress option 1 for English, 2 for Spanish and 3 for French: \n")
+
+        if languages == "1":
+            word = random.choice(english_words)
+            start_hangman(word)
+        elif languages == "2":
+            word = random.choice(spanish_words)
+            start_hangman(word)
+        elif languages == "3":
+            word = random.choice(french_words)
+            start_hangman(word)
+
+        else:
+            print("\033[0;31mPlease try again!")
+
+    def start_hangman(word):
+        """ 
+        """
+        attemps = 6
+        letters = set(word)
+        guesses = []
+
+
+
 
 # Exit the Game function
 def exit_game():
@@ -106,11 +141,14 @@ def exit_game():
     print("\033[0;36mIf you want to start over click the Run Program button at the top of the screen.")
     sys.exit_game()
 
+
 def hangman_game():
     """
     Last function used to call all functions in the game
     """
     input_name()
     main_menu()
+    select_language()
+    start_hangman()
 
 hangman_game()
