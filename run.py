@@ -3,6 +3,8 @@
 
 # External import statements 
 import random
+import os
+import sys
 
 # Import statements I created for the game
 from words import english_words
@@ -45,9 +47,11 @@ def validate_data(name):
 
     return True
 
-def menu_rules():
+# Main menu structure
+
+def main_menu():
     """
-    Main menu options for the game and rules explaining how to play 
+    Main menu options for the game and instructions 
     """
     print("\033[0mHangman Main Menu: \n")
     print("1. Hangman Instructions")
@@ -69,6 +73,34 @@ def menu_rules():
         else:
             print("\033[0;31mIncorrect input, please select a valid option from the menu")
 
+# Instructions explaining how to play the game
 
+def instructions():
+    """
+    Game instructions for the player 
+    """
 
+    print(
+        "033[0;32mHow to Play Hangman: \n\n"
+        "The main objective of this game is to make the correct word "
+        "by guessing the correct letter one at a time. \n\n1. There are three languages "
+        "you can choose to play this game: English, French and Spanish. \n2. To guess the word, "
+        "type a letter of your choice on the selected language, then click the enter key. \n3. If your "
+        "selection is correct the letter will be displayed on the screen. \n4. If the letter selected "
+        "is wrong, the hangman will start to appear on the screen. \n5. You are given "
+        "six attemps to get it right before the game is over. \n6. Click on run the program "
+        "at the top of the screen to reset the whole game back to the beginning."
+    )
 
+    # Promp to player to start the game
+    print("\033[0;36mAre you ready to have fun?.. then press option 3 from the main menu :)? \n")
+
+# Exit the Game function
+def exit_game():
+    """
+    Exit game function and explains the player 
+    how to reset the game back to the beginning
+    """
+    print("\033[0;36mThank you for playing Hangman, I hope you'll come back soon for more fun!")
+    print("\033[0;36mIf you want to start over click the Run Program button at the top of the screen.")
+    sys.exit_game()
