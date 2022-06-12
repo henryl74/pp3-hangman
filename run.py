@@ -13,25 +13,26 @@ from words import french_words
 from display import display_hangman
 
 # Welcome message to Hangman game
-def type_name():
+def input_name():
     """
     Welcome message and input player name to the console
     """
-    print("###################################################################")
-    print("                       HANGMAN")
-    print("Choose your preferred language and guess the word to win the game!")
-    print("###################################################################")
+    print(":::::::::::::::::::::::::::::::::::::")
+    print("           HANGMAN")
+    print("Choose your preferred language and")
+    print("guess the word to win the game!")
+    print(":::::::::::::::::::::::::::::::::::::")
 
     # Print players name with welcome message
     while True:
         player_name = input("\033[0;36mEnter your name here: \n").strip()
 
         if validate_name(player_name):
-            print(f"Hello {player_name} welcome to my game\n")
+            print(f"Hello {player_name} welcome to my game \n")
             break
 
     # Game wont run without a name
-def validate_data(name):
+def validate_name(name):
     """
     Validates user data for name
     """
@@ -60,7 +61,7 @@ def main_menu():
     print("4. Exit Game \n")
 
     while True:
-        menu_selection = input("\033[0;36mPlease select an option from the above menu:")
+        menu_selection = input("\033[0;36mPlease select an option from the above menu: \n")
 
         if menu_selection == "1":
             hangman_instructions()
@@ -75,7 +76,7 @@ def main_menu():
 
 # Instructions explaining how to play the game
 
-def instructions():
+def hangman_instructions():
     """
     Game instructions for the player 
     """
@@ -89,11 +90,11 @@ def instructions():
         "selection is correct the letter will be displayed on the screen. \n4. If the letter selected "
         "is wrong, the hangman will start to appear on the screen. \n5. You are given "
         "six attemps to get it right before the game is over. \n6. Click on run the program "
-        "at the top of the screen to reset the whole game back to the beginning."
+        "at the top of the screen to reset the whole game back to the beginning. \n\n"
     )
 
     # Promp to player to start the game
-    print("\033[0;36mAre you ready to have fun?.. then press option 3 from the main menu :)? \n")
+    print("\033[0;36mAre you ready to have fun?.. if so then press option 3 from the main menu! \n")
 
 # Exit the Game function
 def exit_game():
@@ -101,7 +102,7 @@ def exit_game():
     Exit game function and explains the player 
     how to reset the game back to the beginning
     """
-    print("\033[0;36mThank you for playing Hangman, I hope you'll come back soon for more fun!")
+    print("\033[0;36mThank you for playing Hangman, I hope you'll come back for more fun soon!")
     print("\033[0;36mIf you want to start over click the Run Program button at the top of the screen.")
     sys.exit_game()
 
@@ -109,7 +110,7 @@ def hangman_game():
     """
     Last function used to call all functions in the game
     """
-    type_name()
+    input_name()
     main_menu()
 
 hangman_game()
