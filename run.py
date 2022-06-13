@@ -3,8 +3,9 @@
 
 # External import statements 
 import random
-import os
+from os import system, name
 import sys
+from time import sleep
 
 # Import statements I created for the game
 from words import english_words
@@ -30,7 +31,20 @@ def input_name():
         if validate_name(player_name):
             print(f"Hello {player_name} welcome to my game \n")
             break
+    sleep(2)    
+    clear()        
+    main_menu()            
 
+def clear():
+   # for windows
+   if name == 'nt':
+      _ = system('cls')
+
+   # for mac and linux
+   else:
+    _ = system('clear')
+
+    
     # Game wont run without a name
 def validate_name(name):
     """
@@ -41,6 +55,8 @@ def validate_name(name):
             raise ValueError("\033[0;31mPlease input a name \n")
         elif len(name.strip()) == 0:
             raise ValueError("\033[0;31mPlease input a name \n")
+        elif not name.isalpha():
+            raise ValueError("error")
 
     except ValueError as error:
         print(f"\033[0;31mPlease try again. {error}")
@@ -64,10 +80,13 @@ def main_menu():
 
         if menu_selection == "1":
             hangman_instructions()
+            break
         elif menu_selection == "2":
-            select_language()   
+            select_language()
+            break   
         elif menu_selection == "3":
             exit_game()
+            break
         else:
             print("\033[0;31mIncorrect input, please select a valid option from the menu.")
 
@@ -77,6 +96,7 @@ def hangman_instructions():
     """
     Game instructions for the player 
     """
+    clear()
 
     print(
         "\n\n"
@@ -92,9 +112,10 @@ def hangman_instructions():
         "at the top of the screen to reset the whole game back to the beginning. \n\n"
     )
 
-    # Prompts the player to start the game
-    print("\033[0;36mAre you ready to have fun?.. if so then type 2 on your screen! \n")
-    print("\033[0;36mOtherwise type 3 to exit the game. \n")
+    input("Press Enter to continue.")
+    clear()
+    main_menu()
+
 
 # Function to select the language for the game
 def select_language():
@@ -109,20 +130,30 @@ def select_language():
         if language == "1":
             word = random.choice(english_words)
             start_hangman(word)
+            break
         elif language == "2":
             word = random.choice(spanish_words)
             start_hangman(word)
+            break
         elif language == "3":
             word = random.choice(french_words)
             start_hangman(word)
+            break
 
         else:
             print("\033[0;31mPlease try again!")
 
-    def start_hangman(word):
-        """
-        Ramdon words from local import words.py will be used for the game 
-        """
+
+def start_hangman(word):
+    """
+    Ramdon words from local import words.py will be used for the game 
+    """
+    
+    print(word)
+    print(display_hangman[1])
+
+
+
 
 
 # Exit the Game function
@@ -131,6 +162,7 @@ def exit_game():
     Exit game function and explains the player 
     how to reset the game back to the beginning
     """
+
     print("\033[0;36mThank you for playing Hangman, I hope you'll come back for more fun soon!")
     print("\033[0;36mIf you want to start over click the Run Program button at the top of the screen.")
     sys.exit()
@@ -138,11 +170,8 @@ def exit_game():
 
 def hangman_game():
     """
-    Last function used to call all functions in the game
+    Last function used to call the input_name
     """
     input_name()
-    main_menu()
-    select_language()
-    start_hangman()
 
 hangman_game()
