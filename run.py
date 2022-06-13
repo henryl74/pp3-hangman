@@ -94,6 +94,7 @@ def hangman_instructions():
 
     # Prompts the player to start the game
     print("\033[0;36mAre you ready to have fun?.. if so then type 2 on your screen! \n")
+    print("\033[0;36mOtherwise type 3 to exit the game. \n")
 
 # Function to select the language for the game
 def select_language():
@@ -103,15 +104,15 @@ def select_language():
     """
 
     while True:
-        languages = input("\033[0;36mPress option 1 for English, 2 for Spanish and 3 for French: \n")
+        language = input("\033[0;36mType option 1 for English words, 2 for Spanish words, and 3 for French words: \n")
 
-        if languages == "1":
+        if language == "1":
             word = random.choice(english_words)
             start_hangman(word)
-        elif languages == "2":
+        elif language == "2":
             word = random.choice(spanish_words)
             start_hangman(word)
-        elif languages == "3":
+        elif language == "3":
             word = random.choice(french_words)
             start_hangman(word)
 
@@ -122,11 +123,6 @@ def select_language():
         """
         Ramdon words from local import words.py will be used for the game 
         """
-        attemps = 6
-        letters = set(word)
-        guesses = []
-
-
 
 
 # Exit the Game function

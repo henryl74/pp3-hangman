@@ -1,4 +1,4 @@
-# All steps to build the hangman
+# Constants to build the hangman
 
 display_hangman = ['''
   +---+
