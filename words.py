@@ -6,7 +6,11 @@ english_words = [
     "JUBILEE",
     "PARTY",
     "ABOUT",
-    "MAGIC"
+    "MAGIC",
+    "MARKET",
+    "DIRECT",
+    "WEATHER",
+    "COIN",
 ]
 
 # List of Spanish words for the game
@@ -18,6 +22,10 @@ spanish_words = [
     "COMER",
     "FIESTA",
     "AHORA",
+    "PAELLA",
+    "TINTO",
+    "COCHE",
+    "LONDRES",
 ]
 
 # List of French words for the game
@@ -29,4 +37,8 @@ french_words = [
     "MONDE",
     "MONSIEUR",
     "RAISON",
+    "BEAU",
+    "SAVOIR",
+    "BONHEUR",
+    "VOITURE",
 ]

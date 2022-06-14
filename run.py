@@ -6,12 +6,15 @@ import random
 from os import system, name
 import sys
 from time import sleep
+import os
+import colorama
+from colorama import Fore, Back, Style
+colorama.init(autoreset=True)
 
 # Import statements I created for the game
 from words import english_words
 from words import spanish_words
 from words import french_words
-from display import display_hangman
 
 # Welcome message to Hangman game
 def input_name():
@@ -19,14 +22,14 @@ def input_name():
     Welcome message and input player name to the console
     """
     print(":::::::::::::::::::::::::::::::::::::")
-    print("           HANGMAN")
-    print("Choose your preferred language and")
-    print("guess the word to win the game!")
+    print(Fore.GREEN + "           HANGMAN")
+    print(Fore.GREEN + "Choose your preferred language and")
+    print(Fore.GREEN + "guess the word to win the game!")
     print(":::::::::::::::::::::::::::::::::::::")
 
     # Print players name with welcome message
     while True:
-        player_name = input("\033[0;36mEnter your name here: \n").strip()
+        player_name = input(Fore.BLUE + "Enter your name here: \n").strip()
 
         if validate_name(player_name):
             print(f"Hello {player_name} welcome to my game \n")
@@ -143,20 +146,171 @@ def select_language():
         else:
             print("\033[0;31mPlease try again!")
 
-
+# Function to start the game
 def start_hangman(word):
     """
     Ramdon words from local import words.py will be used for the game 
     """
+    attempts = 6
+    letters = set(word)
+    guesses = []
+
+    # Displays the right answer after all attempts
+    while attempts > 0 and len(letters) > 0:
+        display_answer = [
+            letters if letters in guesses else "_" for letters in word
+        ]
+        print(hangman_status(attempts))
+        print("\n")
+        print(" ".join(display_answer))
+
+        # Request the player to take their turn
+        # .upper used to capitalise letters to match the words lists
+        start_game = input(
+            "\033[0mPlease choose a letter:\n").upper().strip()
+
+        # Clear the terminal
+        os.system("cls" if os.name == "nt" else "clear")
+
+        # Test for valid the selection made
+        if start_game in guesses:
+            print("\033[1;31mOops! You already guessed ", start_game, "\n")
+            print("You have used these letters: ")
+            print(" ".join(guesses))
+
+        # Accepts one character per guess.
+        elif len(start_game) != 1:
+            print(
+                "\033[1;31mSorry! please only enter one guess at a time\n"
+            )
+            print("You have used these letters: ")
+            print(" ".join(guesses))
+
+        # Makes sure the player guess a letter only.
+        elif not start_game.isalpha():
+            print("\033[1;31mSorry! ", start_game, " is not a letter\n")
+            print("You have used these letters: ")
+            print(" ".join(guesses))
+        elif start_game not in word:
+            print("\033[1;31mPlease try again,", start_game, "is not right")
+            attempts -= 1
+            print("\033[0mAttempts Remaining: ", attempts)
+            guesses.append(start_game)
+            print("\033[0mYou have used these letters: ")
+            print(" ".join(guesses))
+        else:
+            print("\033[0;32mGood job! \n")
+            guesses.append(start_game)
+            print("\033[0mYou have used these letters: ")
+            print(" ".join(guesses))
+            if start_game in letters:
+                letters.remove(start_game)
+            else:
+                print("\033[0;31mPlease make a valid choice.")
+
+        # Displays no more attempts left.
+        if attempts == 0:
+            print("\033[0mAttempts Remaining: ", attempts)
+            guesses.append(start_game)
+            print("\033[0;31mSorry you lose!")
+
+    # Promt the user if he/she want to play again
+    print("The correct word was", word, "\n")
+    print("\033[0;36mWould you like to try again?")
+    play_again()
+
+
+def play_again():
+    """
+    Player chooses to play again or exit to the menu.
+    """
+    while True:
+        # try_again only accepts 1 or 2 otherwise an error message is shown.
+        try_again = input("Press 1 for Yes or 2 for No: ")
+
+        if try_again == '1':
+            select_language()
+        elif try_again == '2':
+            main_menu()
+        else:
+            print("\033[0;31mPlease make a valid choice.")
     
-    print(word)
-    print(display_hangman[1])
 
+# Display the hangman stages
 
-
-
+def hangman_status(attempts):
+    """
+    Each status of the hangan 
+    """
+    stages = [
+        """
+            +------+
+            |      |
+            |      o
+            |     \\|/
+            |      |
+            |     / \\
+            ===========
+            """,
+        """
+            +------+
+            |      |
+            |      o
+            |     \\|/
+            |      |
+            |     /
+            ===========
+            """,
+        """
+            +------+
+            |      |
+            |      o
+            |     \\|/
+            |      |
+            |
+            ===========
+            """,
+        """
+            +------+
+            |      |
+            |      o
+            |     \\|
+            |      |
+            |
+            ===========
+            """,
+        """
+            +------+
+            |      |
+            |      o
+            |      |
+            |      |
+            |
+            ===========
+            """,
+        """
+            +------+
+            |      |
+            |      o
+            |
+            |
+            |
+            ===========
+            """,
+        """
+            +------+
+            |      |
+            |
+            |
+            |
+            |
+            ===========
+            """,
+    ]
+    return stages[attempts]
 
 # Exit the Game function
+
 def exit_game():
     """
     Exit game function and explains the player 
@@ -173,5 +327,6 @@ def hangman_game():
     Last function used to call the input_name
     """
     input_name()
+    start_hangman()
 
 hangman_game()
