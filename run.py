@@ -1,7 +1,12 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
-# External import statements 
+# Import statements I created for the game
+from words import english_words
+from words import spanish_words
+from words import french_words
+
+# External import statements
 import random
 from os import system, name
 import sys
@@ -11,10 +16,6 @@ import colorama
 from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
 
-# Import statements I created for the game
-from words import english_words
-from words import spanish_words
-from words import french_words
 
 # Welcome message to Hangman game
 def input_name():
@@ -22,13 +23,13 @@ def input_name():
     Welcome message and input player name to the console
     """
     print(":::::::::::::::::::::::::::::::::::::::::::::::::::::")
-    print(Fore.YELLOW + r"""                                         
-  /\  /\ __ _  _ __    __ _  _ __ ___    __ _  _ __  
- / /_/ // _` || '_ \  / _` || '_ ` _ \  / _` || '_ \ 
+    print(Fore.YELLOW + r"""
+  /\  /\ __ _  _ __    __ _  _ __ ___    __ _  _ __
+ / /_/ // _` || '_ \  / _` || '_ ` _ \  / _` || '_ \
 / __  /| (_| || | | || (_| || | | | | || (_| || | | |
 \/ /_/  \__,_||_| |_| \__, ||_| |_| |_| \__,_||_| |_|
-                      |___/                          
-    """)
+                      |___/
+                      """)
     print(Fore.GREEN + "Welcome to my Game!")
     print(Fore.GREEN + "Choose your preferred language and")
     print(Fore.GREEN + "guess the word to win the game.")
@@ -36,27 +37,28 @@ def input_name():
 
     # Print players name with welcome message
     while True:
-        player_name = input(Fore.LIGHTBLUE_EX + 
-        "Enter your name here: \n").strip()
+        player_name = input(Fore.LIGHTBLUE_EX +
+                            "Enter your name here: \n").strip()
 
         if validate_name(player_name):
             print(f"Hello {player_name} welcome to Hangman \n")
             break
-    sleep(2)    
-    clear()        
-    main_menu()            
+    sleep(2)
+    clear()
+    main_menu()
+
 
 def clear():
-   # for windows
-   if name == 'nt':
-      _ = system('cls')
+    # for windows
+    if name == 'nt':
+        _ = system('cls')
 
-   # for mac and linux
-   else:
-    _ = system('clear')
+    # for mac and linux
+    else:
+        _ = system('clear')
 
-    
-    # Game wont run without a name
+
+# Game wont run without a name
 def validate_name(name):
     """
     Validates user data for name
@@ -75,11 +77,11 @@ def validate_name(name):
 
     return True
 
-# Main menu structure
 
+# Main menu structure
 def main_menu():
     """
-    Main menu options for the game and instructions 
+    Main menu options for the game and instructions
     """
     print(Fore.LIGHTYELLOW_EX + "Hangman Main Menu: \n")
     print("1. Hangman Instructions")
@@ -87,49 +89,49 @@ def main_menu():
     print("3. Exit Game \n")
 
     while True:
-        menu_selection = input(Fore.LIGHTYELLOW_EX + 
-        "Please select an option from the above menu: \n")
+        menu_selection = input(Fore.LIGHTYELLOW_EX +
+                               "Please select an option from the menu: \n")
 
         if menu_selection == "1":
             hangman_instructions()
             break
         elif menu_selection == "2":
             select_language()
-            break   
+            break
         elif menu_selection == "3":
             exit_game()
             break
         else:
             print(Fore.LIGHTYELLOW_EX +
-            "Incorrect input, please select a valid option from the menu.")
+                  "Incorrect, please select a valid option from the menu")
+
 
 # Instructions explaining how to play the game
-
 def hangman_instructions():
     """
-    Game instructions for the player 
+    Game instructions for the player
     """
     clear()
 
-    print(Fore.CYAN + 
-        "\n\n"
-        "How to Play Hangman: \n\n"
-        "The main objective of this game is to make the correct word "
-        "by guessing the correct letter one at a time.\n"
-        "\n1. There are three languages you can choose to play this game: "
-        "you can choose to play this game: English, French and Spanish. " 
-        "\n2. To guess the word, type a letter of your choice "
-        "on the selected language, then press the enter key. "
-        "\n3. If your selection is correct " 
-        "the letter will be displayed on the screen " 
-        "\n4. If the letter selected is wrong, the hangman "
-        "will start to appear on the screen. " 
-        "\n5. You are given SIX attemps to get it right "
-        "before the game is over. " 
-        "\n6. If you find troubles please click on " 
-        "run the program at the top of the screen "
-        "to reset the whole game back to the beginning. \n\n"
-    )
+    print(Fore.CYAN +
+          "\n\n"
+          "How to Play Hangman: \n\n"
+          "The main objective of this game is to make the correct word "
+          "by guessing the\n correct letter one at a time.\n"
+          "\n1. There are three languages you can choose to play this game: "
+          "you can choose\n to play this game: English, French and Spanish. "
+          "\n2. To guess the word, type a letter of your choice "
+          "on the selected language, then press the enter key. "
+          "\n3. If your selection is correct "
+          "the letter will be displayed on the screen "
+          "\n4. If the letter selected is wrong, the hangman "
+          "will start to appear on the screen. "
+          "\n5. You are given SIX attemps to get it right "
+          "before the game is over. "
+          "\n6. If you find troubles please click on "
+          "run the program at the top of the screen "
+          "to reset the whole game back to the beginning. \n\n"
+          )
 
     input("Press Enter to continue.")
     clear()
@@ -145,7 +147,8 @@ def select_language():
 
     while True:
         language = input(Fore.LIGHTCYAN_EX +
-        "Type 1 for English words, 2 for Spanish, 3 for French. \n")
+                         "Type 1 for English words,"
+                         "\n2 for Spanish words, 3 for French words. \n")
 
         if language == "1":
             word = random.choice(english_words)
@@ -163,10 +166,11 @@ def select_language():
         else:
             print(Fore.LIGHTRED_EX + "Please try again!")
 
+
 # Function to start the game
 def start_hangman(word):
     """
-    Ramdon words from local import words.py will be used for the game 
+    Ramdon words from local import words.py will be used for the game
     """
     attempts = 6
     letters = set(word)
@@ -184,35 +188,34 @@ def start_hangman(word):
         # Request the player to take their turn
         # .upper used to capitalise letters to match the words lists
         start_game = input(Fore.LIGHTWHITE_EX +
-            "Please choose a letter:\n").upper().strip()
+                           "Please choose a letter:\n").upper().strip()
 
         # Clear the terminal
         os.system("cls" if os.name == "nt" else "clear")
 
         # Test for valid the selection made
         if start_game in guesses:
-            print(Fore.LIGHTCYAN_EX + 
-            "Oops! You already guessed ", start_game, "\n")
+            print(Fore.LIGHTCYAN_EX +
+                  "Oops! You already guessed ", start_game, "\n")
             print("You have used these letters: ")
             print(" ".join(guesses))
 
         # Accepts one character per guess.
         elif len(start_game) != 1:
             print(Fore.LIGHTRED_EX +
-                "Sorry! please only enter one guess at a time\n"
-            )
+                  "Sorry! please only enter one guess at a time\n")
             print("You have used these letters: ")
             print(" ".join(guesses))
 
         # Makes sure the player guess a letter only.
         elif not start_game.isalpha():
             print(Fore.LIGHTRED_EX +
-            "Sorry! ", start_game, " is not a letter\n")
+                  "Sorry! ", start_game, " is not a letter\n")
             print("You have used these letters: ")
             print(" ".join(guesses))
         elif start_game not in word:
-            print(Fore.LIGHTRED_EX + 
-            "Please try again,", start_game, "is not right")
+            print(Fore.LIGHTRED_EX +
+                  "Please try again,", start_game, "is not right")
             attempts -= 1
             print(Fore.LIGHTCYAN_EX + "Attempts Remaining: ", attempts)
             guesses.append(start_game)
@@ -254,13 +257,13 @@ def play_again():
             main_menu()
         else:
             print(Fore.LIGHTRED_EX + "Please make a valid choice.")
-    
+
 
 # Display the hangman stages
 
 def hangman_status(attempts):
     """
-    Each status of the hangan 
+    Each status of the hangan
     """
     stages = [
         """
@@ -329,24 +332,24 @@ def hangman_status(attempts):
     ]
     return stages[attempts]
 
-# Exit the Game function
 
+# Exit the Game function
 def exit_game():
     """
-    Exit game function and explains the player 
+    Exit game function and explains the player
     how to reset the game back to the beginning
     """
 
     print(Fore.LIGHTBLUE_EX +
-    "Thank you for playing Hangman, come back soon!")
+          "Thank you for playing Hangman, come back soon!")
     print(Fore.LIGHTBLUE_EX +
-    "To start the game again please click the Run Program button.")
+          "To start the game again please click the Run Program button.")
     sys.exit()
 
 
 def hangman_game():
     """
-    Last function used to call the input name 
+    Last function used to call the input name
     and start the hangman.
     """
     input_name()
