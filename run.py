@@ -40,7 +40,7 @@ def input_name():
         "Enter your name here: \n").strip()
 
         if validate_name(player_name):
-            print(f"Hello {player_name} welcome to my game \n")
+            print(f"Hello {player_name} welcome to Hangman \n")
             break
     sleep(2)    
     clear()        
@@ -145,7 +145,7 @@ def select_language():
 
     while True:
         language = input(Fore.LIGHTCYAN_EX +
-        "Type 1 for English words, 2 for Spanish, 3 for French: \n")
+        "Type 1 for English words, 2 for Spanish, 3 for French. \n")
 
         if language == "1":
             word = random.choice(english_words)
@@ -183,57 +183,60 @@ def start_hangman(word):
 
         # Request the player to take their turn
         # .upper used to capitalise letters to match the words lists
-        start_game = input(
-            "\033[0mPlease choose a letter:\n").upper().strip()
+        start_game = input(Fore.LIGHTWHITE_EX +
+            "Please choose a letter:\n").upper().strip()
 
         # Clear the terminal
         os.system("cls" if os.name == "nt" else "clear")
 
         # Test for valid the selection made
         if start_game in guesses:
-            print("\033[1;31mOops! You already guessed ", start_game, "\n")
+            print(Fore.LIGHTCYAN_EX + 
+            "Oops! You already guessed ", start_game, "\n")
             print("You have used these letters: ")
             print(" ".join(guesses))
 
         # Accepts one character per guess.
         elif len(start_game) != 1:
-            print(
-                "\033[1;31mSorry! please only enter one guess at a time\n"
+            print(Fore.LIGHTRED_EX +
+                "Sorry! please only enter one guess at a time\n"
             )
             print("You have used these letters: ")
             print(" ".join(guesses))
 
         # Makes sure the player guess a letter only.
         elif not start_game.isalpha():
-            print("\033[1;31mSorry! ", start_game, " is not a letter\n")
+            print(Fore.LIGHTRED_EX +
+            "Sorry! ", start_game, " is not a letter\n")
             print("You have used these letters: ")
             print(" ".join(guesses))
         elif start_game not in word:
-            print("\033[1;31mPlease try again,", start_game, "is not right")
+            print(Fore.LIGHTRED_EX + 
+            "Please try again,", start_game, "is not right")
             attempts -= 1
-            print("\033[0mAttempts Remaining: ", attempts)
+            print(Fore.LIGHTCYAN_EX + "Attempts Remaining: ", attempts)
             guesses.append(start_game)
-            print("\033[0mYou have used these letters: ")
+            print(Fore.LIGHTGREEN_EX + "You have used these letters: ")
             print(" ".join(guesses))
         else:
-            print("\033[0;32mGood job! \n")
+            print(Fore.LIGHTGREEN_EX + "Good job! \n")
             guesses.append(start_game)
-            print("\033[0mYou have used these letters: ")
+            print(Fore.LIGHTGREEN_EX + "You have used these letters: ")
             print(" ".join(guesses))
             if start_game in letters:
                 letters.remove(start_game)
             else:
-                print("\033[0;31mPlease make a valid choice.")
+                print(Fore.LIGHTRED_EX + "Please make a valid choice.")
 
         # Displays no more attempts left.
         if attempts == 0:
-            print("\033[0mAttempts Remaining: ", attempts)
+            print(Fore.LIGHTCYAN_EX + "Attempts Remaining: ", attempts)
             guesses.append(start_game)
-            print("\033[0;31mSorry you lose!")
+            print(Fore.LIGHTRED_EX + "Sorry you lose!")
 
     # Promt the user if he/she want to play again
     print("The correct word was", word, "\n")
-    print("\033[0;36mWould you like to try again?")
+    print(Fore.LIGHTCYAN_EX + "Would you like to try again?")
     play_again()
 
 
@@ -250,7 +253,7 @@ def play_again():
         elif try_again == '2':
             main_menu()
         else:
-            print("\033[0;31mPlease make a valid choice.")
+            print(Fore.LIGHTRED_EX + "Please make a valid choice.")
     
 
 # Display the hangman stages
@@ -335,15 +338,16 @@ def exit_game():
     """
 
     print(Fore.LIGHTBLUE_EX +
-    "Thank you for playing Hangman, come back soon for more fun!")
+    "Thank you for playing Hangman, come back soon!")
     print(Fore.LIGHTBLUE_EX +
-    "To start over click the Run Program button at the top of the screen.")
+    "To start the game again please click the Run Program button.")
     sys.exit()
 
 
 def hangman_game():
     """
-    Last function used to call the input_name
+    Last function used to call the input name 
+    and start the hangman.
     """
     input_name()
     start_hangman()
