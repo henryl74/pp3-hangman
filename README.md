@@ -20,8 +20,9 @@ I hope you all like it and have fun playing.
 
 * [Objective](<#objective>)
 * [User Experience](<#user-experience-ux>)
-* [Flow Chart](<#flowchart>)
+* [Hangman Flow Chart](<#hangman-flow-chart>)
 * [Features](#features)
+* [Future Features](<#future-features>)
 * [Technologies Used](#technologies-used)
 * [Testing](<#testing>)
   * [PEP8 Valdation](<#pep8-validation>)
@@ -48,7 +49,7 @@ The aim of my project is to deliver a fun, intuitive, fully interactive, user fr
 
 [Back to top](<#contents>)
 
-# Hangaman Flow Chart
+# Hangman Flow Chart
 
 A flow chart was created with the main purpose to map the steps to follow throughout the implementation process of this game, I signed up for a free account with [Lucid Chart](https://www.lucidchart.com/pages/) to be able to produce the below chart.
 
@@ -56,6 +57,119 @@ A flow chart was created with the main purpose to map the steps to follow throug
 ![Hangman Flow Chart](images/flow_chart.png)
 
 [Back to top](<#contents>)
+
+# Features
+
+My game displays the following features:
+
+- Home Page
+- Main Menu
+- Instructions how to play hangman
+- Language Selection
+- Game Stages
+- Exit Game
+
+## Home Page
+
+![Hangman Home Page](images/home_page.png)
+
+- The home page displays the name of game, welcomes the user and brifly explains how to play the game.
+- Here the user will input his/her name to continue, once done the system will greet the player stating his/here name.
+
+## Main Menu
+
+![Hangman Main Menu](images/main_menu.png)
+
+- Once in the main menu, the player has three options:
+  1. To read the game instructions
+  2. To select the language before he/she start playing the game
+  3. To exit the game if the player chages his/her mind
+
+## Instructions how to play hangman
+
+![Hangman Instructions](images/hangman_Instructions.png)
+
+- The instructions are clear to follow, and have designed to cover all possible questions the user may have.
+
+## Language Selection
+
+![Language selection](images/language_selection.png)
+
+-  Once selected, it offers the user to guess the words in the following languages:
+   1. English
+   2. Spanish
+   3. French
+
+## Game Stages
+
+![Game Stages](images/game_stages.png)
+
+- Once the game begins, with each attemp the user will be able to see all the stages of the game:
+  1. The selected letters
+  2. The remaining attemps
+  3. The letters that have been already used
+  4. Error messages if the player makes the wrong selection
+  5. The six stages of the hangman
+  6. The option to play again or be redirected to the main menu
+
+## Exit Game
+
+![Exit Game](images/exit_game.png)
+
+- If selected, thanks the user for the visit; and offers instructions on how to restart the game again.
+
+[Back to top](<#contents>)
+
+# Future Features
+
+## More languages
+
+- This feature will definetely will make the game more interesting and fun to be played, unfurtunately due to time constraints I could not implement extra lists of words, in order to expand further the menu of the game.
+
+## Timer
+
+- This will definetely add a level of difficulty when the game is played.
+
+Both above features will be taken into consideration for a future personal project.
+
+[Back to top](<#contents>)
+
+# Technologies Used
+
+## Languages
+
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+
+- [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+
+## Programs Used
+
+- [Git](https://git-scm.com/) was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub and Heroku.
+
+- [GitHub](https://github.com/) was used to store the projects code after being pushed from Git.
+
+- [Heroku](https://heroku.com/) was used for the deployed application.
+
+- [Lucid Chart](https://www.lucidchart.com/) to map the flowchart for the game.
+
+- [PEP8 online](http://pep8online.com/checkresult) to find indentation errors in Python and solve it.
+
+[Back to top](<#contents>)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
