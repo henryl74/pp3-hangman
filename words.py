@@ -31,6 +31,9 @@ english_words = [
     "TRADITION",
     "THEORY",
     "SOUTHERN",
+    "ADVANCE",
+    "DESIGNER",
+    "FAITH",
 ]
 
 # List of Spanish words for the game
@@ -66,6 +69,9 @@ spanish_words = [
     "ABRAZO",
     "JOVEN",
     "CONTENTO",
+    "MUSEO",
+    "GUSTAR",
+    "ESTUDIAR",
 ]
 
 # List of French words for the game
@@ -101,4 +107,7 @@ french_words = [
     "PISCINE",
     "EXERCISE",
     "CORDE",
+    "CHAUSSER",
+    "TRAVAIL",
+    "VAISSELLE",
 ]
