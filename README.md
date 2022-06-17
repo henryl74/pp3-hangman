@@ -158,7 +158,72 @@ Both above features will be taken into consideration for a future personal proje
 
 [Back to top](<#contents>)
 
+# Testing
 
+## PEP8 Validation
+
+[PEP8](http://pep8online.com/) online validation was used to check that the code is up to standard. All pages cleared the PEP8 validation with no errors.
+
+## run.py
+
+![run.py PEP8 test result](images/run_py.png)
+
+## words.py
+
+![words.py PEP8 test result](images/words_py.png)
+
+[Back to top](<#contents>)
+
+# Bugs Fixed
+
+- While testing the game I discovered I have an error with a function I created to clear the terminal, 
+
+![os system error](images/os_system_error.png)
+
+- I fixed this error by adding the correct external import statement > "import sys" to the run.py file.
+
+![import sys](images/import_sys.png)
+
+- When I initially deplyed the game to Heroku, my game would't run due the following error: 
+
+![Heroku error](images/deployment_error.png)
+
+- I fixed this by adding the external downloaded colorama package to the requirements.txt file
+
+![requirements.txt](images/requirements_txt.png)
+
+[Back to top](<#contents>)
+
+# Deployment
+
+## Heroku
+
+- The project was deployed using Code Institute's mock terminal for Heroku.
+
+## Deployment steps
+
+- Log into Heroku (create an account if you don't have one)
+- Pick the 'Create new app' option from the dashboard.
+- Enter your application name - this name has to be unique - select your region and then click 'Create App'
+- This will bring you to your project page. From here, click the 'Settings' tab and scroll down to Config Vars.
+- In the KEY input field, enter 'PORT' and in the VALUE input field, enter '8000'.
+- Click the 'Add' button to the right to add the Convig Vars.
+- On the same page scroll down to the buildpacks section and click 'Add Buildpack'
+- Add both the Python and node.js buildpacks but make sure that the **Python buildpack is above the node.js one**
+- Go back to the tabs at the top of the page and this time select the 'Deploy' tab.
+- Select Github deployment method.
+- Search for your repository name and click the 'Connect' button to link your chosen repository
+- At the bottom of that page, select your preferred deplyment type; Automatic Deployment or Manual Deployment and wait a few minutes for your project to be deployed.
+
+[Back to top](<#contents>)
+
+# Credits
+
+[Back to top](<#contents>)
+
+# Acknowledgements
+
+[Back to top](<#contents>)
 
 
 
