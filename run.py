@@ -38,7 +38,7 @@ def input_name():
     # Print players name with welcome message
     while True:
         player_name = input(Fore.LIGHTBLUE_EX +
-                            "Enter your name here: \n").strip()
+                            "Please enter your name: \n").strip()
 
         if validate_name(player_name):
             print(f"Hello {player_name} welcome to Hangman \n")
@@ -102,8 +102,8 @@ def main_menu():
             exit_game()
             break
         else:
-            print(Fore.LIGHTYELLOW_EX +
-                  "Incorrect, please select a valid option from the menu")
+            print(Fore.LIGHTWHITE_EX +
+                  "Wrong input, try again.")
 
 
 # Instructions explaining how to play the game
@@ -116,21 +116,21 @@ def hangman_instructions():
     print(Fore.CYAN +
           "\n\n"
           "How to Play Hangman: \n\n"
-          "The main objective of this game is to make the correct word "
-          "by guessing the\n correct letter one at a time.\n"
-          "\n1. There are three languages you can choose to play this game, "
-          "these are: English, Spanish and French. "
+          "The main objective of this game is to guess the word "
+          "\nby choosing the correct letters, one at a time.\n"
+          "\n1. There are 3 languages you can choose from to play "
+          "\nthis game: English, Spanish and French. "
           "\n2. To guess the word, type a letter of your choice "
-          "on the selected language, then press the enter key. "
+          "\nin the selected language, then press the enter key. "
           "\n3. If your selection is correct "
-          "the letter will be displayed on the screen "
+          "\nthe letter will be displayed on the screen. "
           "\n4. If the letter selected is wrong, the hangman "
-          "will start to appear on the screen. "
-          "\n5. You are given SIX attemps to get it right "
-          "before the game is over. "
+          "\nwill start to appear on the screen. "
+          "\n5. You are given SIX attempts to get it right "
+          "\nbefore the game is over. "
           "\n6. If you get stuck running the game please click on "
-          "run the program at the top of the screen, "
-          "to reset the whole game back to the beginning. \n\n"
+          "\nRUN PROGRAM at the top of the screen, "
+          "to reset the game. \n\n"
           )
 
     input("Press Enter to continue.")
@@ -146,9 +146,10 @@ def select_language():
     """
 
     while True:
-        language = input(Fore.LIGHTCYAN_EX +
-                         "Type 1 for English words,"
-                         "\n2 for Spanish words, 3 for French words. \n")
+        language = input(Fore.LIGHTGREEN_EX +
+                         "Enter 1 for English words"
+                         "\nEnter 2 for Spanish words"
+                         "\nEnter 3 for French words \n")
 
         if language == "1":
             word = random.choice(english_words)
@@ -340,16 +341,17 @@ def exit_game():
     how to reset the game back to the beginning
     """
 
-    print(Fore.LIGHTBLUE_EX +
+    print(Fore.LIGHTWHITE_EX +
           "Thank you for playing Hangman, come back soon!")
-    print(Fore.LIGHTBLUE_EX +
-          "To play again please click the Run Program button.")
+    print(Fore.LIGHTWHITE_EX +
+          "To play again please click the RUN PROGRAM button.")
     sys.exit()
 
 
+# Funtion to action the input name and run the game
 def hangman_game():
     """
-    Last function used to call the input name
+    Function used to call the input name
     and start the hangman.
     """
     input_name()
