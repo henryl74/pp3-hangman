@@ -1,31 +1,15 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Portfolio Project 3 Python - Hangman Game
 
-Welcome Henry Leon,
+Tradicionally hangman is a guessing game for two or more players. One player thinks of a word, phrase or sentence and the other(s) tries to guess it by suggesting letters within a certain number of guesses. Originally a Paper-and-pencil game, there are now electronic versions.
+For more details about the origins of this game please click on the below link:
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+[Hangman - Wikipedia](https://en.wikipedia.org/wiki/Hangman_(game))
 
-## Reminders
+My version of the game allows to play one user at the time, I've implemented a menu that allows player to chose the word in three different languages, there are a few functions that checks the user validation inputs for the game flow; in this version the player can only guess one letter at the time, if the word content two of the same letters, then they will be displayed in the screen, this increases the chances of winning, if after six attemps the player fails to guess the word, then it's game over.
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+The main goal of this project is to demonstrate my knowledge acquired throughout the course in Python. 
+I hope you all like it and have fun playing.
 
-## Creating the Heroku app
+## Live Site
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
+[Hangman](https://pp3-hangman-game.herokuapp.com/)
