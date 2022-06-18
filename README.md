@@ -14,7 +14,9 @@ I hope you all like it and have fun playing.
 
 ## Live Site
 
-[Hangman](https://pp3-hangman-game.herokuapp.com/)
+You can view the live deployed game here: [Hangman](https://pp3-hangman-game.herokuapp.com/)
+
+![Hangman amiresponsive](images/hangman_live_site.png)
 
 # Contents
 
