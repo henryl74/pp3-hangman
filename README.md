@@ -74,28 +74,28 @@ My game displays the following features:
 ![Hangman Home Page](images/home_page.png)
 
 - The home page displays the name of game, welcomes the user and brifly explains how to play the game.
-- Here the user will input his/her name to continue, once done the system will greet the player stating his/here name.
+- Here the user will input his/her name to continue, once done the system will greet the player stating his/her name.
 
 ## Main Menu
 
 ![Hangman Main Menu](images/main_menu.png)
 
-- Once in the main menu, the player has three options:
-  1. To read the game instructions
-  2. To select the language before he/she start playing the game
-  3. To exit the game if the player chages his/her mind
+ - Once in the main menu, the player has three options:
+   1. To read the game instructions
+   2. To select the language before he/she start playing the game
+   3. To exit the game if the player chages his/her mind
 
 ## Instructions how to play hangman
 
 ![Hangman Instructions](images/hangman_Instructions.png)
 
-- The instructions are clear to follow, and have designed to cover all possible questions the user may have.
+- The instructions are clear to follow, and have been designed to cover all possible questions the user may have.
 
 ## Language Selection
 
 ![Language selection](images/language_selection.png)
 
--  Once selected, it offers the user to guess the words in the following languages:
+ - Once this option is selected, it offers the user to guess the words in the following languages:
    1. English
    2. Spanish
    3. French
@@ -104,19 +104,19 @@ My game displays the following features:
 
 ![Game Stages](images/game_stages.png)
 
-- Once the game begins, with each attemp the user will be able to see all the stages of the game:
-  1. The selected letters
-  2. The remaining attemps
-  3. The letters that have been already used
-  4. Error messages if the player makes the wrong selection
-  5. The six stages of the hangman
-  6. The option to play again or be redirected to the main menu
+ - Once the game begins, with each attemp the user will be able to see all the stages of the game:
+   1. The selected letters
+   2. The remaining attemps
+   3. The letters that have been already used
+   4. Error messages if the player makes the wrong selection
+   5. The six stages of the hangman
+   6. The option to play again or be redirected to the main menu
 
 ## Exit Game
 
 ![Exit Game](images/exit_game.png)
 
-- If selected, thanks the user for the visit; and offers instructions on how to restart the game again.
+- If this option is selected, thanks the user for the visit, and offers instructions on how to restart the game again.
 
 [Back to top](<#contents>)
 
@@ -184,13 +184,15 @@ Both above features will be taken into consideration for a future personal proje
 
 ![import sys](images/import_sys.png)
 
-- When I initially deplyed the game to Heroku, my game would't run due the following error: 
+- When I initially deplyed the game to Heroku, my game would't run due to the following error message: 
 
 ![Heroku error](images/deployment_error.png)
 
 - I fixed this by adding the external downloaded colorama package to the requirements.txt file
 
 ![requirements.txt](images/requirements_txt.png)
+
+- I had a few indentation errors in my code, I fixed this by passing my code on PEP8 Validation site.
 
 [Back to top](<#contents>)
 
@@ -219,9 +221,33 @@ Both above features will be taken into consideration for a future personal proje
 
 # Credits
 
+- "Love Sandwiches" walkthrough project, since I had no previous experience building a game using Python; completeing this project before anything was a huge help, so thank you Code Institute.
+
+- The idea for the layout of the game came from the Code Institute Ultimate Battleships portfolio project scope.
+
+- I checked for all kind of references from previous projects about games posted in the PP3 slack channel.
+
+- I've found a few online tutorials that help me out to put the ide toguether, there are:
+
+ * [5 Mini Python Projects - For Beginners](https://www.youtube.com/watch?v=DLn3jOsNRVE)
+ * [How to Build a Hangman Game with Python](https://www.youtube.com/watch?v=JNXmCOumNw0)
+ * [How to build HANGMAN with Python in 10 MINUTES](https://www.youtube.com/watch?v=m4nEnsavl6w), I attribute the necessary credits for the art of the hangman stages in my game to this site.
+ * [How To Print Colored Text in Python](https://www.youtube.com/watch?v=u51Zjlnui4Y), highly recommend tutorial if you are planning to add some style to your project.
+ * [How To Use LucidChart](https://www.youtube.com/watch?v=Ngm7JN_9rtQ), nice tutorial for beginners.
+ * [ASCII generator](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20), great site to add some nice art to your home page.
+
 [Back to top](<#contents>)
 
 # Acknowledgements
+
+ * The README template provided by Code Institute from "Portfolio Project Scope".
+ * The online tutors for all their help.
+ * The Code Institute slack community.
+ * All my classmates for constantly sharing new ideas in our dedicated slack channel.
+ * Stack Overflow question and answer website.
+ * My mentor Chris Quinn, big thank you for all your all your amazing guidance given, I learned a lot throughout our sessions.
+ * My family, BIG thank you for being part of the team.
+ * Last but not least Code Institute student support team, for being there for us. 
 
 [Back to top](<#contents>)
 
