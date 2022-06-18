@@ -5,9 +5,7 @@ For more details about the origins of this game please click on the below link:
 
 [Hangman - Wikipedia](https://en.wikipedia.org/wiki/Hangman_(game))
 
-My version of the game allows to play one user at the time, I've implemented a menu that allows players to
-chose the word in three different languages, there are a few functions that check the user validation
-inputs for the game flow; in this version the player can only guess one letter at the time, if the word content two of the same letters, then they will be displayed on the screen, this increases the chances of winning, if after six attempts the player fails to guess the word, then it's game over.
+My version of the game allows to play one user at the time, I've implemented a menu that allows players to choose the word to be guessed in three different languages. There are a few functions that check the user validation inputs for the game flow; the player can only guess one letter at the time, if the word content two of the same letters, then they will be displayed on the screen, this increases the chances of winning, if after six attempts the player fails to guess the word, then it's game over.
 
 The main goal of this project is to demonstrate my knowledge acquired throughout the course in Python. 
 I hope you all like it and have fun playing.
@@ -29,7 +27,6 @@ You can view the live deployed game here: [Hangman](https://pp3-hangman-game.her
 * [Testing](<#testing>)
   * [PEP8 Valdation](<#pep8-validation>)
   * [Bugs Fixed](#bugs-fixed)
-  * [Terminal Compatibility](#terminal-compatibility>)
 * [Deployment](#deployment)
 * [Credits](<#credits>)
 * [Acknowledgements](<#acknowledgements>)
@@ -53,7 +50,7 @@ The aim of my project is to deliver a fun, intuitive, fully interactive, user fr
 
 # Hangman Flow Chart
 
-A flow chart was created with the main purpose to map the steps to follow throughout the implementation process of this game, I signed up for a free account with [Lucid Chart](https://www.lucidchart.com/pages/) to be able to produce the below chart.
+A flow chart was created with the main purpose to map the steps to follow throughout the implementation process of this game. I signed up for a free account with [Lucid Chart](https://www.lucidchart.com/pages/) to be able to produce the below chart.
 
 
 ![Hangman Flow Chart](images/flow_chart.png)
@@ -75,7 +72,7 @@ My game displays the following features:
 
 ![Hangman Home Page](images/home_page.png)
 
-- The home page displays the name of game, welcomes the user and brifly explains how to play the game.
+- The home page displays the name of game, welcomes the user and briefly explains how to play the game.
 - Here the user will input his/her name to continue, once done the system will greet the player stating his/her name.
 
 ## Main Menu
@@ -83,9 +80,9 @@ My game displays the following features:
 ![Hangman Main Menu](images/main_menu.png)
 
  - Once in the main menu, the player has three options:
-   1. To read the game instructions
-   2. To select the language before he/she start playing the game
-   3. To exit the game if the player chages his/her mind
+   * Read the game instructions
+   * Select the language before he/she start playing the game
+   * Exit the game if the player changes his/her mind
 
 ## Instructions how to play hangman
 
@@ -97,22 +94,22 @@ My game displays the following features:
 
 ![Language selection](images/language_selection.png)
 
- - Once this option is selected, it offers the user to guess the words in the following languages:
-   1. English
-   2. Spanish
-   3. French
+ - Once this option has been selected, the user will be able to choose to guess the words in the following languages:
+   * English
+   * Spanish
+   * French
 
 ## Game Stages
 
 ![Game Stages](images/game_stages.png)
 
- - Once the game begins, with each attemp the user will be able to see all the stages of the game:
-   1. The selected letters
-   2. The remaining attemps
-   3. The letters that have been already used
-   4. Error messages if the player makes the wrong selection
-   5. The six stages of the hangman
-   6. The option to play again or be redirected to the main menu
+ - Once the game begins, the user will be able to see all the stages of the game after each attempt, these are:
+   * The selected letters
+   * The remaining attemps
+   * The letters that have been already used
+   * Error messages if the player makes the wrong selection
+   * The six stages of the hangman
+   * The option to play again or be redirected to the main menu
 
 ## Exit Game
 
@@ -126,11 +123,11 @@ My game displays the following features:
 
 ## More languages
 
-- This feature will definetely will make the game more interesting and fun to be played, unfurtunately due to time constraints I could not implement extra lists of words, in order to expand further the menu of the game.
+- This feature will definitely make the game more interesting and fun to be played, unfortunately due to time constraints, I could not implement extra lists of words, in order to expand further the menu of the game.
 
 ## Timer
 
-- This will definetely add a level of difficulty when the game is played.
+- This feature will definitely add a level of difficulty when the game is played.
 
 Both above features will be taken into consideration for a future personal project.
 
@@ -156,7 +153,7 @@ Both above features will be taken into consideration for a future personal proje
 
 - [Lucid Chart](https://www.lucidchart.com/) to map the flowchart for the game.
 
-- [PEP8 online](http://pep8online.com/checkresult) to find indentation errors in Python and solve it.
+- [PEP8 online](http://pep8online.com/checkresult) to find indentation errors in Python.
 
 [Back to top](<#contents>)
 
@@ -186,15 +183,15 @@ Both above features will be taken into consideration for a future personal proje
 
 ![import sys](images/import_sys.png)
 
-- When I initially deplyed the game to Heroku, my game would't run due to the following error message: 
+- When I initially deployed the game to Heroku, my game wouldn't run due to the following error message: 
 
 ![Heroku error](images/deployment_error.png)
 
-- I fixed this by adding the external downloaded colorama package to the requirements.txt file
+- I fixed this by adding the external downloaded colorama package to the requirements.txt file.
 
 ![requirements.txt](images/requirements_txt.png)
 
-- I had a few indentation errors in my code, I fixed this by passing my code on PEP8 Validation site.
+- I had a few indentation errors in my code, I fixed this by passing my code on PEP8 Validation site, readjusted the alignment there, then copied and paste to code back to my run.py file.
 
 [Back to top](<#contents>)
 
@@ -208,35 +205,35 @@ Both above features will be taken into consideration for a future personal proje
 
 - Log into Heroku (create an account if you don't have one)
 - Pick the 'Create new app' option from the dashboard.
-- Enter your application name - this name has to be unique - select your region and then click 'Create App'
-- This will bring you to your project page. From here, click the 'Settings' tab and scroll down to Config Vars.
-- In the KEY input field, enter 'PORT' and in the VALUE input field, enter '8000'.
-- Click the 'Add' button to the right to add the Convig Vars.
-- On the same page scroll down to the buildpacks section and click 'Add Buildpack'
+- Enter your application name - this name has to be unique - select your region and then click "Create App"
+- This will bring you to your project page. From here, click the "Settings" tab and scroll down to Config Vars.
+- In the KEY input field, enter "PORT" and in the VALUE input field, enter "8000".
+- Click the "Add" button to the right to add the Convig Vars.
+- On the same page scroll down to the buildpacks section and click "Add Buildpack"
 - Add both the Python and node.js buildpacks but make sure that the **Python buildpack is above the node.js one**
-- Go back to the tabs at the top of the page and this time select the 'Deploy' tab.
+- Go back to the tabs at the top of the page and this time select the "Deploy" tab.
 - Select Github deployment method.
-- Search for your repository name and click the 'Connect' button to link your chosen repository
+- Search for your repository name and click the "Connect" button to link your chosen repository
 - At the bottom of that page, select your preferred deplyment type; Automatic Deployment or Manual Deployment and wait a few minutes for your project to be deployed.
 
 [Back to top](<#contents>)
 
 # Credits
 
-- "Love Sandwiches" walkthrough project, since I had no previous experience building a game using Python; completeing this project before anything was a huge help, so thank you Code Institute.
+- "Love Sandwiches" walkthrough project,  as I had no previous experience building a game using Python; completing this project before anything was a huge help, thank you Code Institute for such a great tutorial.
 
-- The idea for the layout of the game came from the Code Institute Ultimate Battleships portfolio project scope.
+- The idea of the layout of my game came from the Code Institute Ultimate Battleships portfolio project scope.
 
-- I checked for all kind of references from previous projects about games posted in the PP3 slack channel.
+- I checked for all kinds of references from previous projects about games posted in the PP3 slack channel.
 
-- I've found a few online tutorials that help me out to put the ide toguether, there are:
+- I've found a few online tutorials that helped me out to put the whole idea together, these are:
 
  * [5 Mini Python Projects - For Beginners](https://www.youtube.com/watch?v=DLn3jOsNRVE)
  * [How to Build a Hangman Game with Python](https://www.youtube.com/watch?v=JNXmCOumNw0)
  * [How to build HANGMAN with Python in 10 MINUTES](https://www.youtube.com/watch?v=m4nEnsavl6w), I attribute the necessary credits for the art of the hangman stages in my game to this site.
- * [How To Print Colored Text in Python](https://www.youtube.com/watch?v=u51Zjlnui4Y), highly recommend tutorial if you are planning to add some style to your project.
+ * [How To Print Colored Text in Python](https://www.youtube.com/watch?v=u51Zjlnui4Y), I highly recommend tutorial if you are planning to add some style to your project.
  * [How To Use LucidChart](https://www.youtube.com/watch?v=Ngm7JN_9rtQ), nice tutorial for beginners.
- * [ASCII generator](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20), great site to add some nice art to your home page.
+ * [ASCII generator](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20), fantastic site to add some great art to your home page.
 
 [Back to top](<#contents>)
 
@@ -248,8 +245,8 @@ Both above features will be taken into consideration for a future personal proje
  * All my classmates for constantly sharing new ideas in our dedicated slack channel.
  * Stack Overflow question and answer website.
  * My mentor Chris Quinn, big thank you for all your all your amazing guidance given, I learned a lot throughout our sessions.
- * My family, BIG thank you for being part of the team.
- * Last but not least Code Institute student support team, for being there for us. 
+ * My family, BIG thanks for being part of the team.
+ * Last but not least Code Institute student support team, for being there for us.
 
 [Back to top](<#contents>)
 
